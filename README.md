@@ -1,7 +1,7 @@
 # 🧪 Crystal Structure Stability Prediction
 
 This repository contains the **Jupyter Notebook** for predicting **formation energy** of materials using deep learning.  
-The study integrates **chemical composition**, **crystallographic symmetry information** (crystal system, point group, and space group), and **stability labels** (ground state, metastable, unstable) to improve prediction accuracy.
+The study integrates **chemical composition**, **crystallographic symmetry information** (space group), and **stability labels** (ground state, metastable, unstable) to improve prediction accuracy.
 
 ---
 
