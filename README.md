@@ -43,3 +43,23 @@ After downloading:
 git clone https://github.com/lycan134/formation-energy-prediction.git
 cd formation-energy-prediction
 
+🧩 Repository Structure
+
+The repository is organized as follows:
+
+📁 `formation-energy-prediction/`
+├── `data/`  
+│   ├── `X_preprocessed.csv` – Input features for the model  
+│   └── `y_preprocessed.csv` – Target formation energy values  
+├── `models/`  
+│   ├── `best_model_full.pt` – Trained PyTorch model  
+│   └── `normalization_stats.pth` – Saved normalization statistics  
+├── `figures/`  
+│   ├── `true_vs_predicted_plot.eps` – True vs predicted plot (EPS format)  
+│   └── `true_vs_predicted_plot.svg` – True vs predicted plot (SVG format)  
+├── `train.py` – Script to train the model  
+├── `evaluate.py` – Script to evaluate the model  
+├── `requirements.txt` – List of dependencies  
+└── `README.md` – Project documentation
+
+
