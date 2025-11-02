@@ -1,5 +1,3 @@
-# formation-energy-prediction
-Neural network with hyperparameter tuning (Bayesian optimization + k-fold CV) for materials property prediction.
 # 🧪 Crystal Structure Stability Prediction
 
 This repository contains the **Jupyter Notebook** for predicting **formation energy** of materials using deep learning.  
