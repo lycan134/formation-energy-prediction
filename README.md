@@ -43,6 +43,21 @@ git clone https://github.com/lycan134/formation-energy-prediction.git
 cd formation-energy-prediction
 pip install -r requirements.txt
 
+📁 formation-energy-prediction/
+├── data/
+│   ├── X_preprocessed.csv
+│   └── y_preprocessed.csv
+├── models/
+│   ├── best_model_full.pt
+│   └── normalization_stats.pth
+├── figures/
+│   ├── true_vs_predicted_plot.eps
+│   └── true_vs_predicted_plot.svg
+├── train.py
+├── evaluate.py
+├── requirements.txt
+└── README.md
+
 
 
 
