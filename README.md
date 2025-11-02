@@ -22,27 +22,14 @@ It predicts the *formation energy per atom* from the [Materials Project](https:/
 
 ## 📂 Dataset
 
-The dataset is derived from the [**Materials Project**](https://materialsproject.org/) and preprocessed for machine learning.  
-Due to its large size, the dataset is hosted externally on Zenodo:
+The dataset is derived from the [**Materials Project**](https://materialsproject.org/) and preprocessed for ML.  
+Due to size limits, it is hosted externally on Zenodo:
 
 👉 [**Download Dataset (Zenodo DOI)**](https://zenodo.org/records/17504632)
 
-After downloading, create a `data/` folder in the root of the repository (if it doesn’t exist) and place the downloaded CSV files inside:
+After downloading, create a folder named `data/` in the root of the repository and place the CSV files inside:
 
-
-> ⚠️ Make sure the file names match exactly; the scripts (`train.py`, `evaluate.py`) expect these exact names.
-
----
-
-## ⚙️ Setup and Installation
-
-Clone the repository and install dependencies:
-
-```bash
-git clone https://github.com/lycan134/formation-energy-prediction.git
-cd formation-energy-prediction
-pip install -r requirements.txt
-
-
-
-
+formation-energy-prediction/
+├── data/
+│   ├── X_preprocessed.csv
+│   └── y_preprocessed.csv
