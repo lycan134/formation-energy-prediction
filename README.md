@@ -35,3 +35,11 @@ After downloading:
    data/
    ├── X_preprocessed.csv
    └── y_preprocessed.csv
+
+## ⚙️ Setup & Installation
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/lycan134/formation-energy-prediction.git
+cd formation-energy-prediction
+
