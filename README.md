@@ -1,57 +1,45 @@
-# 🧪 Crystal Structure Formation Energy Prediction
+git clone https://github.com/lycan134/formation-energy-prediction.git cd formation-energy-prediction pip install -r requirements.txt
 
-This repository implements a deep learning workflow to predict formation energy per atom for materials using chemical composition and crystallographic symmetry. It also classifies material stability based on energy above hull.
 
-The workflow is built in PyTorch and includes data preprocessing, model training, evaluation, and interpretability analysis.
+Recommended Python version: 3.8+
 
-## 📘 Overview
+## 🏃 Usage
 
-The project demonstrates a Deep Neural Network (DNN) trained to predict formation energy from the Materials Project dataset. Key aspects of the workflow:
+### Preprocessing
 
-* **Data preprocessing:** Outlier removal, stability classification, one-hot encoding of space groups and stability labels.
+python preparation.py
 
-* **Model training:** Deep feedforward neural network with early stopping and checkpoint saving.
 
-* **Interpretability:** SHAP analysis to understand feature contributions.
+Cleans dataset, adds stability labels, encodes categorical features, and saves preprocessed `X_preprocessed.csv` and `y_preprocessed.csv`.
 
-* **Evaluation:** Metrics include MAE, RMSE, and R², with publication-ready figures automatically saved.
+### Training
 
-* **Future integration:** Designed to integrate into a Streamlit web app for interactive predictions.
+python train.py
 
-## 📂 Dataset Preparation
 
-The dataset is derived from the Materials Project and preprocessed for machine learning.
+Trains the DNN with early stopping and checkpointing.
 
-### Stability Classification
+### Prediction / Evaluation
 
-Materials are labeled based on energy above hull:
+python predict.py # Predict formation energy on new data python evaluate.py # Compute MAE, RMSE, R², and generate figures
 
-| Energy Above Hull (eV/atom) | Stability Label | 
- | ----- | ----- | 
-| $\le 0.025$ | Stable | 
-| $0.025 – 0.100$ | Metastable | 
-| $> 0.100$ | Unstable | 
 
-### Preprocessing Steps
+## 📊 Interpretability
 
-* **Filter formation energy:** Remove outliers beyond $\pm 5\sigma$ of the mean.
+Uses [SHAP](https://shap.readthedocs.io/en/latest/index.html) to analyze feature importance and understand model decisions.
 
-* **Deduplicate:** Keep only the lowest-energy entry for each material formula and space group.
+Publication-ready plots saved automatically in the `figures/` folder.
 
-* **Feature selection:** Includes elemental fractions, physical descriptors (atomic mass, electronegativity, covalent radius, electron affinity), and one-hot encoded space group and stability label.
+## ⚡ Key Highlights
 
-* **Handle missing values:** Options for filling missing values with zeros or mean.
+* Integrates composition, space group, and stability information as features.
 
-* **Prepare ML tensors:** Output $X$ (features) and $y$ (target: formation energy) ready for training.
+* Fully implemented in PyTorch with ML-ready pipeline.
 
-### Dataset Access
+* Ready for interactive deployment in Streamlit.
 
-Due to size constraints, the dataset is hosted externally:
+## 📄 License & Contribution
 
-👉 [Download Dataset (Zenodo DOI)](https://www.google.com/search?q=https://zenodo.org/record/xxx)
+**License:** [MIT](https://www.google.com/search?q=LICENSE)
 
-Place the downloaded CSV in the `data/` folder.
-
-## ⚙️ Setup and Installation
-
-Clone the repository and install dependencies:
+Contributions are welcome via GitHub Pull Requests. Please ensure code style consistency and documentation.
