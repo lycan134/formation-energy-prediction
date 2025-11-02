@@ -1,65 +1,71 @@
-# 🧪 Crystal Structure Stability Prediction
+# Formation Energy Prediction
 
-This repository contains the **PyTorch implementation** for predicting the **formation energy per atom** of crystalline materials using deep learning.  
-The model integrates **chemical composition**, **space group symmetry**, and **stability labels** (ground state, metastable, unstable) to improve prediction accuracy.
-
----
-
-## 📘 Overview
-
-This project demonstrates a **Deep Neural Network (DNN)** built with PyTorch, trained using **k-fold validation**, **early stopping**, and **checkpoint saving**.  
-It predicts the *formation energy per atom* from the [Materials Project](https://materialsproject.org/) dataset and evaluates performance using standard regression metrics.
-
-### 🔑 Key Highlights
-- Incorporates **space group** and **stability label** as key input features  
-- Implements a **deep feedforward neural network** with multiple hidden layers  
-- Uses **MAE**, **RMSE**, and **R²** for real-world evaluation  
-- Automatically saves trained models and normalization stats in the `models/` directory  
-- Generates **publication-ready figures** (`.eps`, `.svg`) in the `figures/` folder  
-- Designed for future integration into a **Streamlit web application**
+Predict the **formation energy** of materials using machine learning. This project provides a workflow for data preprocessing, model training, and inference on material compositions (and optionally crystal structures).  
 
 ---
 
-## 📂 Dataset
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Dataset](#dataset)
+- [Model](#model)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Results](#results)
+- [Limitations](#limitations)
+- [Contributing](#contributing)
+- [License](#license)
 
-The dataset is derived from the [**Materials Project**](https://materialsproject.org/) and preprocessed for machine learning.  
-Due to its large size, the dataset is hosted externally on Zenodo:
+---
 
-👉 [**Download Dataset (Zenodo DOI)**](https://zenodo.org/records/17504632)
+## Project Overview
 
-After downloading:
+The goal of this project is to accurately predict the formation energy of materials, which is a critical property for materials discovery and computational chemistry.  
+This repository includes:
 
-1. Create a folder named `data/` in the root of the repository (if it doesn’t exist).  
-2. Place the downloaded CSV files inside `data/`, for example:
-   ```text
-   data/
-   ├── X_preprocessed.csv
-   └── y_preprocessed.csv
+- Data preprocessing scripts  
+- Feature engineering pipeline  
+- Machine learning model(s) for formation energy prediction  
+- Scripts for training, evaluation, and inference  
 
-## ⚙️ Setup & Installation
+---
 
-### 1. Clone the repository
+## Dataset
+
+**Dataset source:** [Insert dataset source or link here]  
+**Number of samples:** [Insert number]  
+**Features:**  
+- [Feature 1] (e.g., chemical composition, atomic fractions)  
+- [Feature 2] (optional, e.g., crystal structure, space group)  
+- [Additional features as applicable]
+
+**Train/Test Split:** [Describe split, e.g., 80% train / 20% test, or cross-validation strategy]  
+
+---
+
+## Model
+
+**Type:** [DNN / Random Forest / CGCNN / etc.]  
+
+**Architecture / Parameters:**  
+- Input features: [list of features]  
+- Layers: [e.g., 3 hidden layers with 128, 64, 32 neurons]  
+- Activation function: [ReLU / Sigmoid / etc.]  
+- Optimizer: [Adam / SGD / etc.]  
+- Learning rate: [e.g., 0.001]  
+- Epochs: [number]  
+- Batch size: [number]  
+
+**Evaluation Metrics:**  
+- Mean Absolute Error (MAE): [value]  
+- Root Mean Squared Error (RMSE): [value]  
+- R² score: [value]  
+
+---
+
+## Installation
+
+Clone the repository:
+
 ```bash
 git clone https://github.com/lycan134/formation-energy-prediction.git
 cd formation-energy-prediction
-
-🧩 Repository Structure
-
-The repository is organized as follows:
-
-📁 `formation-energy-prediction/`
-├── `data/`  
-│   ├── `X_preprocessed.csv` – Input features for the model  
-│   └── `y_preprocessed.csv` – Target formation energy values  
-├── `models/`  
-│   ├── `best_model_full.pt` – Trained PyTorch model  
-│   └── `normalization_stats.pth` – Saved normalization statistics  
-├── `figures/`  
-│   ├── `true_vs_predicted_plot.eps` – True vs predicted plot (EPS format)  
-│   └── `true_vs_predicted_plot.svg` – True vs predicted plot (SVG format)  
-├── `train.py` – Script to train the model  
-├── `evaluate.py` – Script to evaluate the model  
-├── `requirements.txt` – List of dependencies  
-└── `README.md` – Project documentation
-
-
