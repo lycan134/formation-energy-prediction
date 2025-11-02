@@ -22,10 +22,12 @@ It predicts the *formation energy per atom* from the [Materials Project](https:/
 
 ## 📂 Dataset
 
-The dataset is derived from the **Materials Project** and preprocessed for machine learning.  
-Due to file size limits, it is hosted externally on Zenodo:
+The dataset is derived from the [**Materials Project**](https://materialsproject.org/) and preprocessed for machine learning.  
+Due to its large size, the dataset is hosted externally on Zenodo:
 
-👉 [**Download Dataset (Zenodo DOI)**](https://zenodo.org/records/17218766)
+👉 [**Download Dataset (Zenodo DOI)**](https://zenodo.org/records/17504632)
 
-After downloading, place the dataset inside the `data/` folder:
+After downloading, create a `data/` folder in the root of the repository (if it doesn’t exist) and place the downloaded CSV files inside:
+
+
 
