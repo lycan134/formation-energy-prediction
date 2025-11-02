@@ -44,4 +44,3 @@ Clone the repository and install dependencies:
 git clone https://github.com/lycan134/formation-energy-prediction.git
 cd formation-energy-prediction
 pip install -r requirements.txt
-After downloading, place the dataset inside the `data/` folder:
