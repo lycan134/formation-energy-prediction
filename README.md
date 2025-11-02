@@ -30,4 +30,19 @@ Due to its large size, the dataset is hosted externally on Zenodo:
 After downloading, create a `data/` folder in the root of the repository (if it doesn’t exist) and place the downloaded CSV files inside:
 
 
+> ⚠️ Make sure the file names match exactly; the scripts (`train.py`, `evaluate.py`) expect these exact names.
+
+---
+
+## ⚙️ Setup and Installation
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/lycan134/formation-energy-prediction.git
+cd formation-energy-prediction
+pip install -r requirements.txt
+
+
+
 
