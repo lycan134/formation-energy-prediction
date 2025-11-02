@@ -56,7 +56,9 @@ Place the downloaded CSV in the `data/` folder.
 
 Clone the repository and install dependencies:
 
-git clone https://github.com/lycan134/formation-energy-prediction.git cd formation-energy-prediction pip install -r requirements.txt
+git clone https://github.com/lycan134/formation-energy-prediction.git 
+cd formation-energy-prediction 
+pip install -r requirements.txt
 
 
 Recommended Python version: 3.8+
