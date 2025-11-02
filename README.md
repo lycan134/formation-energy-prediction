@@ -54,3 +54,21 @@ After downloading:
 1. Create a folder named `data/` in the root of the repository (if it doesn’t exist).  
 2. Place the downloaded CSV files inside `data/`, e.g.:
 
+📁 formation-energy-prediction/
+├── data/
+│   ├── X_preprocessed.csv
+│   ├── y_preprocessed.csv
+│
+├── models/
+│   ├── best_model_full.pt
+│   ├── normalization_stats.pth
+│
+├── figures/
+│   ├── true_vs_predicted_plot.eps
+│   ├── true_vs_predicted_plot.svg
+│
+├── train.py
+├── evaluate.py
+├── requirements.txt
+└── README.md
+
