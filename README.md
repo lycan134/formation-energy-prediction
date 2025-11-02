@@ -130,7 +130,10 @@ Trains the DNN with early stopping and checkpointing.
 
 ### Prediction / Evaluation
 
-python predict.py # Predict formation energy on new data python evaluate.py # Compute MAE, RMSE, R², and generate figures
+python predict.py 
+# Predict formation energy on new data python 
+evaluate.py 
+# Compute MAE, RMSE, R², and generate figures
 
 
 ## 📊 Interpretability
