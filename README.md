@@ -77,7 +77,7 @@ Each of these is represented by its **fractional composition** in the material f
 ### 🧩 Crystallographic Symmetry
 
 Space group symmetry is **one-hot encoded** to incorporate structural information.  
-Each material is tagged with its **space group number (1–230)** from its CIF data.
+Each material is tagged with its **space group number (1–230)**.
 
 ---
 
