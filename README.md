@@ -148,8 +148,3 @@ Publication-ready plots saved automatically in the `figures/` folder.
 
 * Ready for interactive deployment in Streamlit.
 
-## 📄 License & Contribution
-
-**License:** [MIT](https://www.google.com/search?q=LICENSE)
-
-Contributions are welcome via GitHub Pull Requests. Please ensure code style consistency and documentation.
