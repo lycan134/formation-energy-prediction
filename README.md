@@ -27,7 +27,7 @@ The dataset originates from the **Materials Project** and is preprocessed for ML
 
 ### 🧭 Stability Classification
 
-Materials are labeled according to **Energy Above Hull (E_(hull)):**
+Materials are labeled according to **Energy Above Hull ($E_(hull)$):**
 
 | Energy Above Hull (eV/atom) | Stability Label |
 |-----------------------------:|----------------:|
