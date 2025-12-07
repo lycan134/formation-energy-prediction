@@ -92,44 +92,61 @@ Fractional composition of all elements (H–Lr) found in the dataset.
 git clone https://github.com/lycan134/formation-energy-prediction.git
 cd formation-energy-prediction
 pip install -r requirements.txt
+Python 3.8+ recommended.
 
-Recommended Python version: 3.8+
-
----
-
-## 🏃 Usage
-
-### Preprocessing
-
+🚀 Usage
+1. Preprocessing
+bash
+Copy code
 python preparation.py
-
-
-Cleans dataset, adds stability labels, encodes categorical features, and saves preprocessed `X_preprocessed.csv` and `y_preprocessed.csv`.
-
-### Training
-
+2. Training
+bash
+Copy code
 python train.py
+3. Prediction
+bash
+Copy code
+python predict.py
+4. Evaluation
+bash
+Copy code
+python evaluate.py
+Generates metrics (MAE, RMSE, R²) and publication-ready figures.
 
+📊 SHAP Interpretability
+SHAP is used to identify feature importance for:
 
-Trains the DNN with early stopping and checkpointing.
+Elemental contributions
 
-### Prediction / Evaluation
+Physical properties
 
-python predict.py # Predict formation energy on new data python 
-evaluate.py # Compute MAE, RMSE, R², and generate figures
+Space group effects
 
+All plots are saved in the figures/ directory.
 
-## 📊 Interpretability
+📁 Project Structure
+kotlin
+Copy code
+formation-energy-prediction/
+│
+├── data/
+│   └── (dataset here)
+├── models/
+│   └── saved_checkpoints/
+├── figures/
+├── preparation.py
+├── train.py
+├── predict.py
+├── evaluate.py
+├── requirements.txt
+└── README.md
+🧾 Citation
+If you use this repository, model, or dataset, please cite:
 
-Uses [SHAP](https://shap.readthedocs.io/en/latest/index.html) to analyze feature importance and understand model decisions.
-
-Publication-ready plots saved automatically in the `figures/` folder.
-
-## ⚡ Key Highlights
-
-* Integrates composition, space group, and stability information as features.
-
-* Fully implemented in PyTorch with ML-ready pipeline.
-
-* Ready for interactive deployment in Streamlit.
-
+bash
+Copy code
+Torláo V.C., et al. "Formation energy prediction of material crystal structures using deep learning."
+Materials Research Express (2025).
+DOI: 10.1088/2053-1591/ae22cb
+📜 License
+Released under the MIT License.
