@@ -94,26 +94,20 @@ cd formation-energy-prediction
 pip install -r requirements.txt
 Python 3.8+ recommended.
 
-🚀 Usage
+---
+
+## 🚀 Usage
 1. Preprocessing
-bash
-Copy code
 python preparation.py
 2. Training
-bash
-Copy code
 python train.py
 3. Prediction
-bash
-Copy code
 python predict.py
 4. Evaluation
-bash
-Copy code
 python evaluate.py
 Generates metrics (MAE, RMSE, R²) and publication-ready figures.
 
-📊 SHAP Interpretability
+## 📊 SHAP Interpretability
 SHAP is used to identify feature importance for:
 
 Elemental contributions
@@ -125,8 +119,6 @@ Space group effects
 All plots are saved in the figures/ directory.
 
 📁 Project Structure
-kotlin
-Copy code
 formation-energy-prediction/
 │
 ├── data/
@@ -143,8 +135,6 @@ formation-energy-prediction/
 🧾 Citation
 If you use this repository, model, or dataset, please cite:
 
-bash
-Copy code
 Torláo V.C., et al. "Formation energy prediction of material crystal structures using deep learning."
 Materials Research Express (2025).
 DOI: 10.1088/2053-1591/ae22cb
