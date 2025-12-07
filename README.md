@@ -93,9 +93,9 @@ git clone https://github.com/lycan134/formation-energy-prediction.git
 cd formation-energy-prediction
 pip install -r requirements.txt
 
-
-
 Recommended Python version: 3.8+
+
+---
 
 ## 🏃 Usage
 
