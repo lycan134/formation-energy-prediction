@@ -97,7 +97,7 @@ Each material is tagged with its **space group number (1–230)**.
 
 Due to size constraints, the dataset is hosted externally:
 
-👉 [Download Dataset (Zenodo DOI)](https://zenodo.org/records/17218766)
+👉 [Download Dataset (Zenodo DOI)](https://zenodo.org/records/17504632)
 
 Place the downloaded CSV in the `data/` folder.
 
