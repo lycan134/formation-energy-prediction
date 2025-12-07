@@ -135,7 +135,7 @@ formation-energy-prediction/
 🧾 Citation
 If you use this repository, model, or dataset, please cite:
 
-Torláo V.C., et al. "Formation energy prediction of material crystal structures using deep learning."
+Torlao V.C., et al. "Formation energy prediction of material crystal structures using deep learning."
 Materials Research Express (2025).
 DOI: 10.1088/2053-1591/ae22cb
 📜 License
