@@ -1,113 +1,98 @@
-# 🧪 Crystal Structure Formation Energy Prediction
+# 🧪 Crystal Structure Formation Energy Prediction  
+[![DOI](https://img.shields.io/badge/DOI-10.1088%2F2053--1591%2Fae22cb-blue)](https://doi.org/10.1088/2053-1591/ae22cb)  
+![Python](https://img.shields.io/badge/Python-3.8+-yellow)  
+![License](https://img.shields.io/badge/License-MIT-green)  
+![PyTorch](https://img.shields.io/badge/Framework-PyTorch-red)
 
-A **Deep Learning workflow** to predict **formation energy per atom** of materials based on their **chemical composition** and **crystallographic symmetry**.  
-It also includes **stability classification** using energy above hull.
+A **Deep Learning pipeline** for predicting the **formation energy per atom** of inorganic crystalline materials using their **chemical composition** and **crystallographic symmetry**.  
+This repository accompanies the published paper:
 
-Built with **PyTorch**, the workflow covers data preprocessing, model training, evaluation, and feature interpretability via **SHAP**.
+> **Torláo et al., Materials Research Express (2025)**  
+> DOI: **10.1088/2053-1591/ae22cb**
+
+The workflow features preprocessing, DNN training, stability classification, evaluation, and SHAP interpretability.
+
+---
+
+## ✨ Features
+
+- 🔬 Formation energy prediction using a deep neural network  
+- 🧭 Stability classification (stable / metastable / unstable) via **Energy Above Hull**  
+- ⚙️ End-to-end ML workflow: preprocessing → training → evaluation → plots  
+- 📊 Model interpretability with **SHAP**  
+- 🏗️ Crystallographic space group encoding (1–230)  
+- 📈 Automatically generates publication-ready figures  
+- 🌐 Ready for future Streamlit deployment  
 
 ---
 
 ## 📘 Overview
 
-This project demonstrates a **Deep Neural Network (DNN)** trained on the **Materials Project** dataset to predict formation energy and classify material stability.
+This project uses a DNN trained on the **Materials Project** database to:
 
-**Core features:**
-
-- 🧹 **Data preprocessing:** Outlier removal, stability labeling, and encoding of composition and symmetry features.  
-- ⚙️ **Model training:** Deep feedforward network with **early stopping** and **checkpoint saving**.  
-- 🔍 **Interpretability:** **SHAP**-based feature importance analysis.  
-- 📈 **Evaluation:** Metrics include **MAE**, **RMSE**, and **R²**, with figures auto-generated for publication use.  
-- 🌐 **Future integration:** Compatible with **Streamlit** for interactive predictions.
+- Predict formation energy per atom  
+- Classify material stability  
+- Analyze feature contributions (elements, physical descriptors, symmetry)
 
 ---
 
-## 📂 Dataset Preparation
+## 📂 Dataset
 
-The dataset originates from the **Materials Project** and is preprocessed for ML compatibility.
+The processed and labeled dataset (used in the publication) is hosted at Zenodo:
 
-### 🧭 Stability Classification
+👉 **[Zenodo Dataset (DOI)](https://zenodo.org/records/17504632)**
 
-Materials are labeled according to **Energy Above Hull (E_(hull)):**
-
-| Energy Above Hull (eV/atom) | Stability Label |
-|-----------------------------:|----------------:|
-| ≤ 0.025                     | Stable          |
-| 0.025 – 0.100               | Metastable      |
-| > 0.100                     | Unstable        |
+Place the file inside the `data/` directory.
 
 ---
 
-## 🧮 Features and Data Representation
+## 🧭 Stability Classification
 
-Each material sample is represented through **elemental composition**, **aggregate atomic descriptors**, and **space group symmetry**.
-
-### 🔢 Elemental Features
-Elements included in the dataset:
-
-`'H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne',  
-'Na', 'Mg', 'Al', 'Si', 'P', 'S', 'Cl', 'Ar',  
-'K', 'Ca', 'Sc', 'Ti', 'V', 'Cr', 'Mn', 'Fe', 'Co', 'Ni',  
-'Cu', 'Zn', 'Ga', 'Ge', 'As', 'Se', 'Br', 'Kr',  
-'Rb', 'Sr', 'Y', 'Zr', 'Nb', 'Mo', 'Tc', 'Ru', 'Rh', 'Pd',  
-'Ag', 'Cd', 'In', 'Sn', 'Sb', 'Te', 'I', 'Xe',  
-'Cs', 'Ba', 'La', 'Ce', 'Pr', 'Nd', 'Pm', 'Sm', 'Eu', 'Gd',  
-'Tb', 'Dy', 'Ho', 'Er', 'Tm', 'Yb', 'Lu',  
-'Hf', 'Ta', 'W', 'Re', 'Os', 'Ir', 'Pt', 'Au', 'Hg',  
-'Tl', 'Pb', 'Bi', 'Po', 'At', 'Rn', 'Fr', 'Ra',  
-'Ac', 'Th', 'Pa', 'U', 'Np', 'Pu', 'Am', 'Cm', 'Bk', 'Cf',  
-'Es', 'Fm', 'Md', 'No', 'Lr'`
-
-Each of these is represented by its **fractional composition** in the material formula.
+| Energy Above Hull (eV/atom) | Label        |
+|-----------------------------:|--------------|
+| ≤ 0.025                     | Stable       |
+| 0.025–0.100                 | Metastable   |
+| > 0.100                     | Unstable     |
 
 ---
 
-### ⚛️ Physical Descriptors
+## 🧮 Feature Engineering
 
-| Descriptor | Meaning |
-|-------------|----------|
-| `n_atoms` | Total number of atoms in the compound |
-| `n_elements` | Number of unique elements present |
-| `avg_atomic_mass` | Mean atomic mass (weighted by composition) |
-| `en_mean`, `en_max`, `en_min`, `en_range` | Mean, max, min, and range of electronegativity |
-| `avg_covalent_radius` | Average covalent radius |
-| `ea_mean`, `ea_max`, `ea_min`, `ea_range` | Mean, max, min, and range of electron affinity |
+### **1. Elemental Features**
+Fractional composition of all elements (H–Lr) found in the dataset.
 
----
+### **2. Physical Descriptors**
+- `n_atoms`, `n_elements`  
+- Mean atomic mass  
+- Electronegativity: mean, max, min, range  
+- Covalent radius: mean  
+- Electron affinity: mean, max, min, range  
 
-### 🧩 Crystallographic Symmetry
-
-Space group symmetry is **one-hot encoded** to incorporate structural information.  
-Each material is tagged with its **space group number (1–230)**.
+### **3. Crystallographic Symmetry**
+- Space group (1–230), one-hot encoded  
 
 ---
 
-### 🧰 Preprocessing Summary
+## 🛠️ Preprocessing Workflow
 
-1. **Filter formation energy:** Remove outliers beyond ±5σ from the mean.  
-2. **Deduplicate:** Keep the lowest-energy entry for each formula and space group.  
-3. **Feature scaling:** Normalize atomic and physical features.  
-4. **Handle missing values:** Fill with mean or zero.  
-5. **Encode categorical variables:** Space groups and stability labels.  
-6. **Output:** Final ML tensors `X` (features) and `y` (formation energy).
+1. Remove formation energy outliers (±5σ)  
+2. Deduplicate lowest-energy entries per formula + space group  
+3. Normalize atomic & physical features  
+4. Impute missing values  
+5. Encode space groups and stability labels  
+6. Export:
+   - `X_preprocessed.csv`
+   - `y_preprocessed.csv`
 
 ---
 
+## ⚙️ Installation
 
-### Dataset Access
-
-Due to size constraints, the dataset is hosted externally:
-
-👉 [Download Dataset (Zenodo DOI)](https://zenodo.org/records/17504632)
-
-Place the downloaded CSV in the `data/` folder.
-
-## ⚙️ Setup and Installation
-
-Clone the repository and install dependencies:
-
-git clone https://github.com/lycan134/formation-energy-prediction.git 
-cd formation-energy-prediction 
+```bash
+git clone https://github.com/lycan134/formation-energy-prediction.git
+cd formation-energy-prediction
 pip install -r requirements.txt
+
 
 
 Recommended Python version: 3.8+
