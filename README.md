@@ -7,7 +7,7 @@
 A **Deep Learning pipeline** for predicting the **formation energy per atom** of inorganic crystalline materials using their **chemical composition** and **crystallographic symmetry**.  
 This repository accompanies the published paper:
 
-> **Torláo et al., Materials Research Express (2025)**  
+> **Torlao et al., Materials Research Express (2025)**  
 > DOI: **10.1088/2053-1591/ae22cb**
 
 The workflow features preprocessing, DNN training, stability classification, evaluation, and SHAP interpretability.
